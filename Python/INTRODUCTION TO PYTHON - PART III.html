@@ -180,16 +180,265 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="c"># Check if an integer(sum)can be produced from any pairs of numbers from the input.</span>
 <span class="c"># Program - I</span>
-<span class="c"># input : [1,2,3,4] , Sum= 5   Ouput : Yes</span>
-<span class="c"># input : [1,2,3,4] , Sum= 15   Ouput : No</span>
+<span class="c"># input : [1,2,3,4] , Sum= 5  3+2  Ouput : Yes </span>
+<span class="c"># input : [1,2,3,4] , Sum= 15   ? Ouput : No</span>
+
+<span class="k">def</span> <span class="nf">getSum</span><span class="p">(</span><span class="n">l</span><span class="p">,</span><span class="nb">sum</span><span class="p">):</span>
+    <span class="nb">dict</span><span class="o">=</span><span class="p">{}</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">l</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">dict</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">True</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">dict</span><span class="p">[</span><span class="nb">sum</span><span class="o">-</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="mi">1</span>
+    <span class="k">return</span> <span class="bp">False</span>
+<span class="k">print</span> <span class="n">getSum</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span><span class="mi">15</span><span class="p">)</span>
 </pre></div>
 
 </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>False
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="c"># Sort the given input according to the custom key rather than the direct values.</span>
+<span class="c"># Program - II</span>
+<span class="c"># input : [&quot;John Albert&quot;,&quot;Kristen Roberts&quot;,&quot;Samuel Jackson&quot;,&quot;Steven Smith&quot;] </span>
+<span class="c"># sort according to the lastname</span>
+<span class="c"># output : [&quot;John Albert&quot;,,&quot;Samuel Jackson&quot;,&quot;Kristen Roberts&quot;,&quot;Steven Smith&quot;]</span>
+
+<span class="nb">input</span> <span class="o">=</span><span class="p">[</span><span class="s">&quot;John Albert&quot;</span><span class="p">,</span><span class="s">&quot;Kristen Roberts&quot;</span><span class="p">,</span><span class="s">&quot;Samuel Jackson&quot;</span><span class="p">,</span><span class="s">&quot;Steven Smith&quot;</span><span class="p">]</span>
+<span class="k">def</span> <span class="nf">getlastname</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&quot; &quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="k">print</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span><span class="n">key</span><span class="o">=</span><span class="n">getlastname</span><span class="p">)</span>
+    
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[&apos;John Albert&apos;, &apos;Samuel Jackson&apos;, &apos;Kristen Roberts&apos;, &apos;Steven Smith&apos;]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Working-with-regular-expressions">Working with regular expressions<a class="anchor-link" href="#Working-with-regular-expressions">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="kn">import</span> <span class="nn">re</span>
+
+<span class="c"># *** The search proceeds through the string from start to end, stopping at the first match found ***</span>
+
+<span class="c"># \w - matching a single lowercase character </span>
+
+<span class="c"># For more information follow: https://developers.google.com/edu/python/regular-expressions</span>
+
+<span class="nb">str</span> <span class="o">=</span> <span class="s">&#39;Hello How are you? Hope you got 90 percentile in TEST!!&#39;</span>
+
+<span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s">r&#39;you \w\w\w&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">match</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s">&#39;found: &#39;</span><span class="p">,</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">()</span>
+
+<span class="c"># How special characters should be matched</span>
+<span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s">r&#39;you\? \w\w\w&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">match</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s">&#39;found: &#39;</span><span class="p">,</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">()</span>
+    
+<span class="c">#search for digits   </span>
+<span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s">r&#39;\d&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">match</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s">&#39;found: &#39;</span><span class="p">,</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">()</span>
+    
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>found:  you got
+found:  you? Hop
+found:  9
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="+----1-or-more-occurrences-of-the-pattern-to-its-left,-e.g.-'i+'-=-one-or-more-i's">+ -- 1 or more occurrences of the pattern to its left, e.g. 'i+' = one or more i's<a class="anchor-link" href="#+----1-or-more-occurrences-of-the-pattern-to-its-left,-e.g.-'i+'-=-one-or-more-i's">&#182;</a></h3><h3 id="*----0-or-more-occurrences-of-the-pattern-to-its-left">* -- 0 or more occurrences of the pattern to its left<a class="anchor-link" href="#*----0-or-more-occurrences-of-the-pattern-to-its-left">&#182;</a></h3><h3 id="?----match-0-or-1-occurrences-of-the-pattern-to-its-left">? -- match 0 or 1 occurrences of the pattern to its left<a class="anchor-link" href="#?----match-0-or-1-occurrences-of-the-pattern-to-its-left">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s">r&#39;\d+&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">match</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s">&#39;found: &#39;</span><span class="p">,</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">()</span>
+    
+    
+<span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s">r&#39;\w+\?&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">match</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s">&#39;found: &#39;</span><span class="p">,</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">()</span> 
+    
+    
+<span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s">r&#39;\w+\!!&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">match</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s">&#39;found: &#39;</span><span class="p">,</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">()</span>
+    
+    
+
+<span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s">r&#39;[a-zA-Z]!&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">match</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s">&#39;found: &#39;</span><span class="p">,</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">()</span>
+    
+
+<span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s">r&#39;[a-zA-Z]*!&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">match</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s">&#39;found: &#39;</span><span class="p">,</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>found:  90
+found:  you?
+found:  test!!
+found:  test!
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="c"># findAll</span>
+<span class="c"># Trying to find the names in all email corpus</span>
+<span class="nb">str</span> <span class="o">=</span> <span class="s">&#39;abc@gmail.com xyz@gmail.com aplha@yahoo.com&#39;</span>
+<span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s">r&#39;\w+@&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">match</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s">&#39;found: &#39;</span><span class="p">,</span><span class="n">item</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>found:  abc@
+found:  xyz@
+found:  aplha@
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="c"># *** Cleaning your text **</span>
+<span class="c"># *** Encode the data *****</span>
+<span class="n">encoded</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s">r&#39;\w+@&#39;</span><span class="p">,</span> <span class="s">&#39;****&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+<span class="k">print</span> <span class="n">encoded</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>****gmail.com ****gmail.com ****yahoo.com
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -199,11 +448,10 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="c"># Sort the given input according to the custom key rather than the direct values.</span>
-<span class="c"># Program - II</span>
-<span class="c"># input : [&quot;John Albert&quot;,&quot;Kristen Roberts&quot;,&quot;Samuel Jackson&quot;,&quot;Steven Smith&quot;] </span>
-<span class="c"># sort according to the lastname</span>
-<span class="c"># output : [&quot;John Albert&quot;,,&quot;Samuel Jackson&quot;,&quot;Kristen Roberts&quot;,&quot;Steven Smith&quot;]</span>
+<div class=" highlight hl-ipython2"><pre><span class="c">### Program 1 : Regular Expressions</span>
+<span class="c">#### Encode all the digits with &quot;*&quot;in a given string.</span>
+<span class="c">#### Input  : &quot; X has got 12,300 salary ,his birth date was 09-03-1990.&quot;</span>
+<span class="c">#### Output : &quot; X has got **,*** salary ,his birth date was **-**-****.&quot;</span>
 </pre></div>
 
 </div>
