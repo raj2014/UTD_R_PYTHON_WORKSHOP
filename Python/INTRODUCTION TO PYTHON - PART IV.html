@@ -293,6 +293,361 @@ TX
 </div>
 
 </div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="c">### Building a LinkedList </span>
+<span class="c">#LinkedList Usage </span>
+<span class="k">class</span> <span class="nc">Node</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="nb">next</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">next</span>  <span class="o">=</span> <span class="nb">next</span>
+
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+    
+    <span class="k">def</span> <span class="nf">append</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="nb">next</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">next</span><span class="o">=</span><span class="nb">next</span>
+        
+<span class="c"># main routine</span>
+        
+<span class="n">n1</span><span class="o">=</span><span class="n">Node</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">n2</span><span class="o">=</span><span class="n">Node</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">n3</span><span class="o">=</span><span class="n">Node</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">n4</span><span class="o">=</span><span class="n">Node</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">n1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">n2</span><span class="p">)</span>
+<span class="n">n2</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">n3</span><span class="p">)</span>
+<span class="n">n3</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">n4</span><span class="p">)</span>
+<span class="k">while</span> <span class="n">n1</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+    <span class="k">print</span> <span class="n">n1</span>
+    <span class="n">n1</span><span class="o">=</span><span class="n">n1</span><span class="o">.</span><span class="n">next</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>1
+2
+3
+4
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="c"># Building a tree</span>
+<span class="c">#Tree structures</span>
+<span class="k">class</span> <span class="nc">Tree</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cargo</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cargo</span> <span class="o">=</span> <span class="n">cargo</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">left</span>  <span class="o">=</span> <span class="n">left</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="n">right</span>
+
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cargo</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="c"># Graph Structure</span>
+<span class="c"># BFS</span>
+<span class="n">graph</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;A&#39;</span><span class="p">:</span> <span class="nb">set</span><span class="p">([</span><span class="s">&#39;B&#39;</span><span class="p">,</span> <span class="s">&#39;C&#39;</span><span class="p">]),</span>
+         <span class="s">&#39;B&#39;</span><span class="p">:</span> <span class="nb">set</span><span class="p">([</span><span class="s">&#39;A&#39;</span><span class="p">,</span> <span class="s">&#39;D&#39;</span><span class="p">,</span> <span class="s">&#39;E&#39;</span><span class="p">]),</span>
+         <span class="s">&#39;C&#39;</span><span class="p">:</span> <span class="nb">set</span><span class="p">([</span><span class="s">&#39;A&#39;</span><span class="p">,</span> <span class="s">&#39;F&#39;</span><span class="p">]),</span>
+         <span class="s">&#39;D&#39;</span><span class="p">:</span> <span class="nb">set</span><span class="p">([</span><span class="s">&#39;B&#39;</span><span class="p">]),</span>
+         <span class="s">&#39;E&#39;</span><span class="p">:</span> <span class="nb">set</span><span class="p">([</span><span class="s">&#39;B&#39;</span><span class="p">,</span> <span class="s">&#39;F&#39;</span><span class="p">]),</span>
+         <span class="s">&#39;F&#39;</span><span class="p">:</span> <span class="nb">set</span><span class="p">([</span><span class="s">&#39;C&#39;</span><span class="p">,</span> <span class="s">&#39;E&#39;</span><span class="p">])}</span>
+
+<span class="c">#Breadth first Search</span>
+<span class="k">def</span> <span class="nf">bfs</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">start</span><span class="p">):</span>
+    <span class="n">visited</span><span class="p">,</span> <span class="n">queue</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(),</span> <span class="p">[</span><span class="n">start</span><span class="p">]</span>
+    <span class="n">visit_order</span><span class="o">=</span><span class="p">[]</span> <span class="c"># to track the traversing order</span>
+    <span class="k">while</span> <span class="n">queue</span><span class="p">:</span>
+        <span class="n">vertex</span> <span class="o">=</span> <span class="n">queue</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">vertex</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">visited</span><span class="p">:</span>
+            <span class="n">visit_order</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">vertex</span><span class="p">)</span>
+            <span class="n">visited</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">vertex</span><span class="p">)</span>
+            <span class="n">queue</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">graph</span><span class="p">[</span><span class="n">vertex</span><span class="p">]</span> <span class="o">-</span> <span class="n">visited</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">visit_order</span>
+
+<span class="n">bfs</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="s">&#39;A&#39;</span><span class="p">)</span> <span class="c"># {&#39;B&#39;, &#39;C&#39;, &#39;A&#39;, &#39;F&#39;, &#39;D&#39;, &#39;E&#39;}</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[11]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[&apos;A&apos;, &apos;C&apos;, &apos;B&apos;, &apos;F&apos;, &apos;E&apos;, &apos;D&apos;]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="c">#Graph Structure</span>
+<span class="c"># DFS</span>
+<span class="n">graph</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;A&#39;</span><span class="p">:</span> <span class="nb">set</span><span class="p">([</span><span class="s">&#39;B&#39;</span><span class="p">,</span> <span class="s">&#39;C&#39;</span><span class="p">]),</span>
+         <span class="s">&#39;B&#39;</span><span class="p">:</span> <span class="nb">set</span><span class="p">([</span><span class="s">&#39;A&#39;</span><span class="p">,</span> <span class="s">&#39;D&#39;</span><span class="p">,</span> <span class="s">&#39;E&#39;</span><span class="p">]),</span>
+         <span class="s">&#39;C&#39;</span><span class="p">:</span> <span class="nb">set</span><span class="p">([</span><span class="s">&#39;A&#39;</span><span class="p">,</span> <span class="s">&#39;F&#39;</span><span class="p">]),</span>
+         <span class="s">&#39;D&#39;</span><span class="p">:</span> <span class="nb">set</span><span class="p">([</span><span class="s">&#39;B&#39;</span><span class="p">]),</span>
+         <span class="s">&#39;E&#39;</span><span class="p">:</span> <span class="nb">set</span><span class="p">([</span><span class="s">&#39;B&#39;</span><span class="p">,</span> <span class="s">&#39;F&#39;</span><span class="p">]),</span>
+         <span class="s">&#39;F&#39;</span><span class="p">:</span> <span class="nb">set</span><span class="p">([</span><span class="s">&#39;C&#39;</span><span class="p">,</span> <span class="s">&#39;E&#39;</span><span class="p">])}</span>
+
+<span class="c">#Breadth first Search</span>
+<span class="k">def</span> <span class="nf">dfs</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">start</span><span class="p">):</span>
+    <span class="n">visited</span><span class="p">,</span> <span class="n">queue</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(),</span> <span class="p">[</span><span class="n">start</span><span class="p">]</span>
+    <span class="n">visit_order</span><span class="o">=</span><span class="p">[]</span> <span class="c"># to track the traversing order</span>
+    <span class="k">while</span> <span class="n">queue</span><span class="p">:</span>
+        <span class="n">vertex</span> <span class="o">=</span> <span class="n">queue</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">vertex</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">visited</span><span class="p">:</span>
+            <span class="n">visit_order</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">vertex</span><span class="p">)</span>
+            <span class="n">visited</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">vertex</span><span class="p">)</span>
+            <span class="n">queue</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">graph</span><span class="p">[</span><span class="n">vertex</span><span class="p">]</span> <span class="o">-</span> <span class="n">visited</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">visit_order</span>
+
+<span class="n">dfs</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="s">&#39;A&#39;</span><span class="p">)</span> <span class="c"># {&#39;B&#39;, &#39;C&#39;, &#39;A&#39;, &#39;F&#39;, &#39;D&#39;, &#39;E&#39;}</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[12]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[&apos;A&apos;, &apos;B&apos;, &apos;D&apos;, &apos;E&apos;, &apos;F&apos;, &apos;C&apos;]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="c"># Elegant and simple way to code</span>
+
+<span class="c"># Lambda functions</span>
+
+<span class="c"># Anonymous in nature,mainly meant for one time usage</span>
+
+<span class="n">input_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">21</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">56</span><span class="p">,</span><span class="mi">27</span><span class="p">,</span><span class="mi">36</span><span class="p">,</span><span class="mi">46</span><span class="p">]</span>
+
+<span class="c">## print map(myfunc,input_list)</span>
+
+<span class="k">print</span> <span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span> <span class="p">,</span><span class="n">input_list</span><span class="p">)</span>
+
+<span class="k">print</span> <span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="n">input_list</span><span class="p">)</span>
+
+<span class="k">print</span> <span class="nb">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">,</span><span class="n">input_list</span><span class="p">)</span>
+
+ 
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[25, 441, 9, 3136, 729, 1296, 2116]
+[56, 36, 46]
+194
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="c"># Loop comprehension</span>
+<span class="k">print</span> <span class="p">[</span><span class="n">x</span><span class="o">*</span><span class="mi">3</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">input_list</span><span class="p">]</span>
+
+<span class="k">print</span> <span class="s">&quot;------&quot;</span>
+
+<span class="c"># function to print all the pairs</span>
+<span class="k">print</span> <span class="p">[(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">input_list</span> <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">input_list</span><span class="p">]</span>
+
+<span class="k">print</span> <span class="s">&quot;------&quot;</span>
+
+<span class="c"># function to print all the pairs</span>
+<span class="k">print</span> <span class="p">[</span><span class="n">x</span><span class="o">+</span><span class="n">y</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">input_list</span> <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">input_list</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[15, 63, 9, 168, 81, 108, 138]
+------
+[(5, 5), (5, 21), (5, 3), (5, 56), (5, 27), (5, 36), (5, 46), (21, 5), (21, 21), (21, 3), (21, 56), (21, 27), (21, 36), (21, 46), (3, 5), (3, 21), (3, 3), (3, 56), (3, 27), (3, 36), (3, 46), (56, 5), (56, 21), (56, 3), (56, 56), (56, 27), (56, 36), (56, 46), (27, 5), (27, 21), (27, 3), (27, 56), (27, 27), (27, 36), (27, 46), (36, 5), (36, 21), (36, 3), (36, 56), (36, 27), (36, 36), (36, 46), (46, 5), (46, 21), (46, 3), (46, 56), (46, 27), (46, 36), (46, 46)]
+------
+[10, 26, 8, 61, 32, 41, 51, 26, 42, 24, 77, 48, 57, 67, 8, 24, 6, 59, 30, 39, 49, 61, 77, 59, 112, 83, 92, 102, 32, 48, 30, 83, 54, 63, 73, 41, 57, 39, 92, 63, 72, 82, 51, 67, 49, 102, 73, 82, 92]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="c"># functions can be passed as arguments</span>
+
+<span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">+</span><span class="n">y</span>
+
+<span class="k">def</span> <span class="nf">operation</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+
+<span class="k">print</span> <span class="n">operation</span><span class="p">(</span><span class="n">add</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>30
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span class="c"># Closure (Dynamic code and scope constraints) </span>
+
+<span class="k">def</span> <span class="nf">base</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    
+    <span class="k">def</span> <span class="nf">add_y</span><span class="p">(</span><span class="n">inc</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">x</span><span class="o">+</span><span class="n">inc</span>
+    <span class="k">return</span> <span class="n">add_y</span>
+
+<span class="n">f</span><span class="o">=</span><span class="n">base</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="k">print</span> <span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="k">print</span> <span class="n">f</span>
+
+<span class="n">f</span><span class="o">=</span><span class="n">base</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="k">print</span> <span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="k">print</span> <span class="n">f</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>11
+&lt;function add_y at 0x00000000040647B8&gt;
+101
+&lt;function add_y at 0x00000000040644A8&gt;
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre> 
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
     </div>
   </div>
 </body>
